@@ -1,0 +1,2294 @@
+{
+  "orgAddress": "北京DD区",
+  "orgElementVOList": [
+    {
+      "elementCode": "orgType",
+      "elementName": "企业类型",
+      "elementValues": "医疗机构",
+      "valuesCode": "med_orgT01"
+    },
+    {
+      "elementCode": "property",
+      "elementName": "经营性质",
+      "elementValues": "true",
+      "valuesCode": "med_property01"
+    },
+    {
+      "elementCode": "垃圾数据",
+      "elementName": "经营性质",
+      "elementValues": "true",
+      "valuesCode": "med_property01"
+    },
+     {
+      "elementCode": "orgLevel",
+      "elementName": "机构等级",
+      "elementValues": "三级,甲等",
+      "valuesCode": "med_orgL03,med_orgL0301"
+    },
+    {
+      "elementCode": "linkManName",
+      "elementName": "联系人姓名",
+      "elementValues": "王五"
+    },
+     {
+      "elementCode": "job",
+      "elementName": "所属职务",
+      "elementValues": "主任",
+      "valuesCode": "med_job01"
+    },
+     {
+      "elementCode": "department",
+      "elementName": "所属部门",
+      "elementValues": "医务处",
+      "valuesCode": "med_dapt01"
+    },
+    {
+      "elementCode": "linkManPhone",
+      "elementName": "联系人手机号码",
+      "elementValues": "18665459566"
+    },
+    {
+      "elementCode": "linkManEmail",
+      "elementName": "联系人邮箱",
+      "elementValues": "129996@qq.com"
+    },
+    {
+      "elementCode": "adminDept",
+      "elementName": "行政管理部门",
+      "elementValues": "厅直厅管",
+      "valuesCode": "med_adminD01"
+    },
+    {
+      "elementCode": "isOperation",
+      "elementName": "是否有手术",
+      "elementValues": "true",
+      "valuesCode": "med_isOperationY"
+    },
+     {
+      "elementCode": "medOrgType",
+      "elementName": "医疗机构类型",
+      "elementValues": "综合医院",
+      "valuesCode": "med_orgMT01"
+    },
+     {
+      "elementCode": "bankAccountName",
+      "elementName": "户名",
+      "elementValues": "可口可乐有限公司"
+    },
+    {
+      "elementCode": "bankAccountNo",
+      "elementName": "银行账号",
+      "elementValues": "5255255561"
+    },
+     {
+      "elementCode": "bankName",
+      "elementName": "开户行",
+      "elementValues": "建设银行"
+    }
+  ],
+  "paperworkInfoList": [
+    {
+      "code": "bl",
+      "name": "营业执照",
+      "url": "1552328449245315072",
+      "value": "48136652522"
+    },
+    {
+      "code": "exbl",
+      "name": "执行许可证",
+      "url": "1552328449245315072",
+      "value": "6562525452"
+    },
+     {
+      "code": "powerOfAttorneyFiles",
+      "name": "授权书",
+      "url": "1552328449245315072"
+    }
+  ],
+  "orgFullName": "可口可乐有限公司",
+  "provinceCode": "500000",
+  "userCode": "19UC1571330295095885824",
+  "createCode":"19UC1571330295095885824"
+};
+var data = {
+  orgFullName: this.formCom.jgName, //联系人
+  orgAddress: this.formCom.address, //地址
+  provinceCode: this.formCom.qu, //地区
+  // code: this.$localStorageUtil.getLocalStorage("code").code, //企业编
+  orgElementVOList: [
+    {
+      elementCode: "adminDept",
+      elementName: "行政管理部门",
+      valuesCode: this.formCom.department.valuesCode,
+      elementValues: this.formCom.department.elementValues
+    },
+    {
+      elementCode: "orgType",
+      elementName: "机构类型",
+      valuesCode: this.formCom.types.valuesCode,
+      elementValues: this.formCom.types.elementValues
+    },
+    {
+      elementCode: "medOrgType",
+      elementName: "医疗机构类型",
+      valuesCode: this.formCom.yljgType.valuesCode,
+      elementValues: this.formCom.yljgType.elementValues
+    },
+    {
+      elementCode: "orgLevel",
+      elementName: "机构等级",
+      valuesCode:
+        addList.valuesCode + "," + this.formCom.grate2.valuesCode,
+      elementValues:
+        addList.elementValues + "," + this.formCom.grate2.elementValues
+    },
+
+    {
+      elementCode: "job",
+      elementName: "所属职务",
+      valuesCode: this.formCom.zhiwu.valuesCode,
+      elementValues: this.formCom.zhiwu.elementValues
+    },
+    {
+      elementCode: "department",
+      elementName: "所属部门",
+      valuesCode: this.formCom.bumen.valuesCode,
+      elementValues: this.formCom.bumen.elementValues
+    },
+    {
+      elementCode: "linkManPhone",
+      elementName: "联系人手机号码",
+      elementValues:this.formCom.lxrNumber
+    },
+    {
+      elementCode: "linkManEmail",
+      elementName: "联系人邮箱",
+      elementValues: this.formCom.lxrEmail
+    },
+    {
+      elementCode: "linkManName",
+      elementName: "联系人姓名",
+      elementValues:this.formCom.lxrName
+    },
+    {
+      elementCode: "isOperation",
+      elementName: "是否有手术",
+      elementValues: JSON.stringify(this.formCom.isSs),
+      valuesCode: this.formCom.isSs
+        ? "med_isOperationY"
+        : "med_isOperationN"
+    },
+    {
+      elementCode: "property",
+      elementName: "经营性质",
+      elementValues: JSON.stringify(this.formCom.jyxz),
+      valuesCode: this.formCom.jyxz ? "med_property01" : "med_property02"
+    }
+  ],
+  paperworkInfoList: [
+    {
+      code: "bl",
+      name: "营业执照",
+      url: this.upcertifyImageUrl,
+      value:this.formCom.xyNumber
+    },
+    {
+      code: "exbl",
+      name: "执行许可证",
+      // url: "1552328449245315072",
+      url: this.upNumberImageUrl,
+      value: this.formCom.xyNumber
+    },
+    {
+      code: "powerOfAttorneyFiles",
+      name: "授权书",
+      //url: "1552328449245315072"
+      url: this.sqBookImageUrl
+    }
+  ],
+
+  userCode: window.localStorage.getItem("userCode"), //用户编码
+  ///userCode:"19UC1571330295095885824",
+  createCode: window.localStorage.getItem("userCode")
+};
+<template>
+  <div class="list-wrap bg-white overflow">
+    <!-- 步骤条 -->
+    <!-- <ComSteps :step="1" :tip="tip"></ComSteps> -->
+    <!-- 填写认证信息 -->
+    <p :class=" [vertyfy ?'green':'red','cer']" v-if="vertify">未认证</p>
+    <p :class=" [vertyfy ?'red':'green','cer']" v-else>已认证</p>
+    <ComSteps
+      v-if="stepShow"
+      :shibai="shibai"
+      :waitting="waitting"
+      :success="success"
+      :step="step"
+      :reason="reason"
+    ></ComSteps>
+    <ComMes
+      ref="step"
+      :shibai="shibai"
+      :success="success"
+      @headlerStep="headlerS"
+      @changeTab="first"
+    ></ComMes>
+    <div></div>
+    <div class="mt50 w80p box-center info-container">
+      <el-form
+        :model="formCom"
+        :rules="rules"
+        ref="formCom"
+        label-width="120px"
+        class="demo-ruleForm"
+        size="medium"
+      >
+        <!-- <p class="f18 pt20 pb20 color-blue">企业基本信息</p> -->
+        <el-row>
+          <el-rol :span="24">
+            <el-form-item label="机构类型" class="elitem" v-if="unauthorized">
+              <el-select value-key="valuesCode" v-model="formCom.types" placeholder="请选择活动区域">
+                <el-option
+                  v-for="type in getOptionsData('orgType')"
+                  :key="type.valuesCode"
+                  :label="type.elementValues"
+                  :value="type"
+                ></el-option>
+              </el-select>
+
+              <span v-if="authenticated">1{{formCom.types.elementValues}}</span>
+            </el-form-item>
+          </el-rol>
+        </el-row>
+        <!-- 医疗机构开始-->
+        <template v-if="formCom.types.valuesCode == 'med_orgT01'">
+          <el-form-item label="机构名称" class="elitem" prop="jgName" v-if="unauthorized">
+            <el-input v-model="formCom.jgName" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">{{formCom.jgName}}</span> -->
+          </el-form-item>
+
+         
+          <el-form-item label="地区" id="area" class="elitem" prop="area" v-if="unauthorized">
+            <el-form-item prop="sheng">
+              <el-select v-model="formCom.sheng" placeholder="省级地区" @change="selectProChnage">
+                <el-option
+                  v-for="province in provinces"
+                  v-if="province.code!==''"
+                  :key="province.code"
+                  :label="province.name"
+                  :value="province.code"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item prop="city">
+              <el-select v-model="formCom.city" placeholder="市级地区" @change="citysChage">
+                <el-option
+                  v-for="city in shi"
+                  v-if="city.code!==''"
+                  :key="city.code"
+                  :label="city.name"
+                  :value="city.code"
+                  @click.native="cityChange(city)"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item prop="contrys">
+              <el-select v-model="formCom.contrys" value-key="valuesCode" @change="contryChange" placeholder="区级地区">
+                <el-option
+                  v-for="contry in contrys"
+                  v-if="contry.code!==''"
+                  :key="contry.code"
+                  :label="contry.name"
+                  :value="contry.code"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+
+            <!-- <span v-if="authenticated">地区</span> -->
+          </el-form-item>
+          <el-form-item label="机构地址" class="elitem" prop="address" v-if="unauthorized">
+            <el-input v-model="formCom.address" placeholder="请输入" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">机构地址</span> -->
+          </el-form-item>
+          <el-form-item label="卫生行政主管部门" class="elitem" prop="department" v-if="unauthorized">
+            <el-select v-model="formCom.department" value-key="valuesCode" placeholder="请选择">
+              <el-option
+                v-for="adminDept in getOptionsData('adminDept')"
+                :key="adminDept.valuesCode"
+                :label="adminDept.elementValues"
+                :value="adminDept"
+              ></el-option>
+            </el-select>
+            <!-- <span v-if="authenticated">卫生行政主管部门</span> -->
+          </el-form-item>
+           <el-form-item label="机构等级" id="lever" class="elitem" prop="grate" v-if="unauthorized">
+            <el-select
+              v-model="formCom.grate1"
+              placeholder="请选择活动区域"
+              @change="jgLever"
+              value-key="valuesCode"
+            >
+              <el-option
+                v-for="lever in jgLever()"
+                :label="lever.elementValues"
+                :value="lever.valuesCode"
+                :key="lever.valuesCode"
+              ></el-option>
+            </el-select>
+
+            <el-select
+              v-if="unauthorized"
+              value-key="valuesCode"
+              v-model="formCom.grate2"
+              placeholder="请选择活动区域"
+            >
+              <el-option
+                v-for="le in jss()"
+                :label="le.elementValues"
+                :value="le"
+                :key="le.valuesCode"
+              ></el-option>
+            </el-select>
+
+            <!-- <span v-if="authenticated">机构等级</span> -->
+          </el-form-item>
+          <el-form-item
+            label="医疗机构类型"
+            value-key="valuesCode"
+            class="elitem"
+            prop="yljgType"
+            v-if="unauthorized"
+          >
+            <el-select value-key="valuesCode" v-model="formCom.yljgType" placeholder="请选择活动区域">
+              <el-option
+                v-for="medOrgType in getOptionsData('medOrgType')"
+                :key="medOrgType.valuesCode"
+                :label="medOrgType.elementValues"
+                :value="medOrgType"
+              ></el-option>
+              <!-- <el-option label="区域二"></el-option> -->
+            </el-select>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="是否有手术" class="elitem" prop="isSs" v-if="unauthorized">
+            <!-- <el-switch v-model="formCom.isSs" active-color="#13ce66" inactive-color="#ff4949"></el-switch> -->
+            <el-radio-group v-model="formCom.isSs">
+              <el-radio-button label="有"></el-radio-button>
+              <el-radio-button label="没有"></el-radio-button>
+            </el-radio-group>
+            <!-- <span v-if="authenticated">shi</span> -->
+          </el-form-item>
+          <el-form-item label="经营性质" class="elitem" prop="jyxz" v-if="unauthorized">
+            <!-- <el-switch v-model="formCom.jyxz" active-color="#13ce66" inactive-color="#ff4949"></el-switch> -->
+            <el-radio-group v-model="formCom.jyxz">
+              <el-radio-button label="营利"></el-radio-button>
+              <el-radio-button label="非营利"></el-radio-button>
+            </el-radio-group>
+            <!-- <span v-if="authenticated">经营性质</span> -->
+          </el-form-item>
+          <el-form-item label="联系人姓名" class="elitem" prop="lxrName" v-if="unauthorized">
+            <el-input v-model="formCom.lxrName" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">{{formCom.lxrName}}</span> -->
+          </el-form-item>
+          <el-form-item label="联系人手机电话号码" class="elitem" prop="lxrNumber" v-if="unauthorized">
+            <el-input v-model="formCom.lxrNumber" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">联系人手机电话号码</span> -->
+          </el-form-item>
+          <el-form-item label="联系人邮箱" class="elitem" prop="lxrEmail" v-if="unauthorized">
+            <el-input v-model="formCom.lxrEmail" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="所属职务" class="elitem" prop="zhiwu" v-if="unauthorized">
+            <el-select value-key="valuesCode" v-model="formCom.zhiwu" placeholder="请选择活动区域">
+              <el-option
+                v-for="job in getOptionsData('job')"
+                :key="job.valuesCode"
+                :label="job.elementValues"
+                :value="job"
+              ></el-option>
+            </el-select>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="所属部门" class="elitem" prop="bumen" v-if="unauthorized">
+            <el-select value-key="valuesCode" v-model="formCom.bumen" placeholder="请选择活动区域">
+              <el-option
+                v-for="department in getOptionsData('department')"
+                :key="department.valuesCode"
+                :label="department.elementValues"
+                :value="department"
+              ></el-option>
+              <!-- <el-option label="区域二" value="beijing"></el-option> -->
+            </el-select>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item
+            label="医疗机构执业许可证/对外有偿服务许可证号"
+            class="elitem"
+            prop="xkzNumber"
+            v-if="unauthorized"
+          >
+            <el-input v-model="formCom.xkzNumber" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">医疗机构执业许可证</span> -->
+          </el-form-item>
+          <el-form-item
+            label="统一社会信用代码/组织机构代码/营业执照号码"
+            class="elitem"
+            prop="xyNumber"
+            v-if="unauthorized"
+          >
+            <el-input v-model="formCom.xyNumber" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">统一社会信用代码</span> -->
+          </el-form-item>
+          <!-- <el-form-item label="银行卡号" class="elitem" prop="bankNumber">
+            <el-input
+              v-if="unauthorized"
+              v-model="formCom.bankNumber"
+              placeholder="请输入真实姓名"
+              style="width:50%;"
+            ></el-input>
+            <span v-if="authenticated">银行卡号</span>
+          </el-form-item>
+          <el-form-item label="开户行" class="elitem" prop="bankName">
+            <el-input
+              v-if="unauthorized"
+              v-model="formCom.bankName"
+              placeholder="请输入真实姓名"
+              style="width:50%;"
+            ></el-input>
+            <span v-if="authenticated">开户行</span>
+          </el-form-item>-->
+          <el-form-item
+            label="医疗机构执业许可证或对外有偿执业许可证"
+            class="elitem"
+            prop="upcertify"
+            v-if="unauthorized"
+          >
+            <div>
+              <div class="up">
+                <el-upload
+                  :action="$apiUrl.COM_UPLOAD"
+                  list-type="picture-card"
+                  :on-preview="certifyhandlePicturePreview"
+                  :on-remove="certifyhandleRemove"
+                  :on-success="upcertifySuccess"
+                >
+                <p class="upload">点击上传</p>  
+                  <!-- <i>统一社会信用代码/组织机构代码</i> -->
+                </el-upload>
+                <p>十</p>
+              </div>
+              <div class="upDetail">
+                <p>证件要求</p>
+                <p class="line"></p>
+                 <ul>
+                  <li>
+                    <i></i>
+                    <span>必须为清楚，完整的加盖公章扫描件或数码照</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>仅支持JPG,PNG的图片格式，图片大小不超过3MB</span>
+                  </li>
+                </ul>
+              </div>
+              <!-- <el-dialog :visible.sync="dialogVisible1" size="tiny"> -->
+              <!-- <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.bl" alt> -->
+              <!-- </el-dialog> -->
+            </div>
+            <!-- <div v-if="authenticated">
+              <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.bl" alt>
+            </div>-->
+          </el-form-item>
+          <el-form-item
+            label="营业执照号码或组织机构代码或统一社会信用代码"
+            class="elitem"
+            prop="upNumber"
+            v-if="unauthorized"
+          >
+            <div>
+              <div class="up">
+                <el-upload
+                  :action="$apiUrl.COM_UPLOAD"
+                  list-type="picture-card"
+                  :on-preview="upNumberhandlePicturePreview"
+                  :on-remove="upNumberhandleRemove"
+                  :on-success="upNumberSuccess"
+                >
+                 <p class="upload">点击上传</p>
+                  <!-- <i>统一社会信用代码/组织机构代码</i> -->
+                </el-upload>
+                <p>十</p>
+              </div>
+              <div class="upDetail">
+                <p>证件要求</p>
+                 <p class="line"></p>
+                  <ul>
+                  <li>
+                    <i></i>
+                    <span>必须为清楚，完整的加盖公章扫描件或数码照</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>仅支持JPG,PNG的图片格式，图片大小不超过3MB</span>
+                  </li>
+                </ul>
+              </div>
+              <!-- <el-dialog :visible.sync="dialogVisible2" size="tiny"> -->
+              <!-- <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.exbl" alt> -->
+              <!-- </el-dialog> -->
+            </div>
+            <!-- <div v-if="authenticated">
+              <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.exbl" alt>
+            </div>-->
+          </el-form-item>
+          <el-form-item label="授权书" class="elitem" prop="sqBook" v-if="unauthorized">
+            <div>
+              <div class="up">
+                <el-upload
+                  :action="$apiUrl.COM_UPLOAD"
+                  list-type="picture-card"
+                  :on-preview="sqBookhandlePicturePreview"
+                  :on-remove="sqBookhandleRemove"
+                  :on-success="sqBookSuccess"
+                >
+                  <p class="upload">点击上传</p>
+                  <!-- <i>统一社会信用代码/组织机构代码</i> -->
+                </el-upload>
+                <p>十</p>
+              </div>
+              <div class="upDetail">
+                <p>证件要求</p>
+                 <p class="line"></p>
+                <ul>
+                   <li>
+                    <i></i>
+                    <span>必须使用网站提供的《授权书》，请您下载。</span>
+                    <span class="download"> 下载</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>填写已下载的授权书，不得涂改。</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>必须为清楚，完整的加盖公章扫描件或数码照</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>仅支持JPG,PNG的图片格式，图片大小不超过3MB</span>
+                  </li>
+                </ul>
+              </div>
+               <a href="#">授权书模板下载</a>
+              <!-- <el-dialog :visible.sync="dialogVisible3" size="tiny"> -->
+              <!-- <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.powerOfAttorneyFiles" alt> -->
+              <!-- </el-dialog> -->
+            </div>
+            <!-- <div v-if="authenticated">
+              <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.powerOfAttorneyFiles" alt>
+            </div>-->
+          </el-form-item>
+        </template>
+        <!-- 医疗机构卫生局结束 -->
+        <!-- 卫生局开始 -->
+        <template v-else>
+          <el-form-item label="机构名称" class="elitem" prop="jgName" v-if="unauthorized">
+            <el-input v-model="formCom.jgName" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">bchd</span> -->
+          </el-form-item>
+
+          <el-form-item label="机构地址" class="elitem" prop="address" v-if="unauthorized">
+            <el-input v-model="formCom.address" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated">机构地址</span> -->
+          </el-form-item>
+
+          <el-form-item label="地区" id="area" class="elitem" v-if="unauthorized">
+            <el-form-item>
+              <el-form-item prop="sheng">
+                <el-select v-model="formCom.sheng" placeholder="省级地区" @change="selectProChnage">
+                  <el-option
+                    v-for="province in provinces"
+                    v-if="province.code!==''"
+                    :key="province.code"
+                    :label="province.name"
+                    :value="province.code"
+                  ></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item prop="city">
+                <el-select v-model="formCom.city" placeholder="市级地区" @change="citysChage">
+                  <el-option
+                    v-for="city in shi"
+                    :key="city.code"
+                    :label="city.name"
+                    :value="city.code"
+                    @click.native="cityChange(city)"
+                  ></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item prop="contry">
+                <el-select v-model="formCom.contrys" placeholder="区级地区" @change="contryChange">
+                  <el-option
+                    v-for="contry in contrys"
+                    :key="contry.code"
+                    :label="contry.name"
+                    :value="contry.code"
+                  ></el-option>
+                </el-select>
+              </el-form-item>
+            </el-form-item>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+
+          <el-form-item label="联系人姓名" class="elitem" v-if="unauthorized">
+            <el-input v-model="formCom.lxrName" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="联系人手机电话号码" class="elitem" v-if="unauthorized">
+            <el-input v-model="formCom.lxrNumber" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="联系人邮箱" class="elitem" v-if="unauthorized">
+            <el-input v-model="formCom.lxrEmail" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="所属职务" class="elitem" v-if="unauthorized">
+            <el-select value-key="valuesCode" v-model="formCom.zhiwu" placeholder="请选择活动区域">
+              <el-option
+                v-for="job in getOptionsData('job')"
+                :key="job.valuesCode"
+                :label="job.elementValues"
+                :value="job"
+              ></el-option>
+            </el-select>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="所属部门" class="elitem" v-if="unauthorized">
+            <el-select value-key="valuesCode" v-model="formCom.bumen" placeholder="请选择活动区域">
+              <el-option
+                v-for="department in getOptionsData('department')"
+                :key="department.valuesCode"
+                :label="department.elementValues"
+                :value="department"
+              ></el-option>
+              <!-- <el-option label="区域二" value="beijing"></el-option> -->
+            </el-select>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+          <el-form-item label="统一社会信用代码/组织机构代码/营业执照号码" class="elitem" v-if="unauthorized">
+            <el-input v-model="formCom.xyNumber" placeholder="请输入真实姓名" style="width:50%;"></el-input>
+            <!-- <span v-if="authenticated"></span> -->
+          </el-form-item>
+
+          <el-form-item label="统一社会信用代码" class="elitem" prop="upNumber" v-if="unauthorized">
+            <div>
+              <div class="up">
+                <el-upload
+                  :action="$apiUrl.COM_UPLOAD"
+                  list-type="picture-card"
+                  :on-preview="upNumberhandlePicturePreview"
+                  :on-remove="upNumberhandleRemove"
+                  :on-success="upNumberSuccess"
+                >
+                 <p class="upload">点击上传</p>
+                  <!-- <i>统一社会信用代码/组织机构代码</i> -->
+                </el-upload>
+                <p>十</p>
+              </div>
+              <div class="upDetail">
+                <p>证件要求</p>
+                 <p class="line"></p>
+                <ul>
+                  <li>
+                    <i></i>
+                    <span>必须为清楚，完整的加盖公章扫描件或数码照</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>仅支持JPG,PNG的图片格式，图片大小不超过3MB</span>
+                  </li>
+                </ul>
+              </div>
+              <!-- <el-dialog :visible.sync="dialogVisible2" size="tiny">  -->
+              <!-- <img width="100%" :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.exbl" alt> -->
+              <!-- </el-dialog>  -->
+            </div>
+            <div v-if="authenticated">
+              <img
+                width="100%"
+                :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.exbl"
+                alt
+              >
+            </div>
+          </el-form-item>
+          <el-form-item label="授权书" class="elitem" prop="sqBook" v-if="unauthorized">
+            <div>
+              <div class="up">
+                <el-upload
+                  :action="$apiUrl.COM_UPLOAD"
+                  list-type="picture-card"
+                  :on-preview="sqBookhandlePicturePreview"
+                  :on-remove="sqBookhandleRemove"
+                  :on-success="sqBookSuccess"
+                >
+                <p class="upload">点击上传</p>
+                  <!-- <i>统一社会信用代码/组织机构代码</i> -->
+                </el-upload>
+                <p>十</p>
+              </div>
+              <div class="upDetail">
+                <p>证件要求</p>
+                 <p class="line"></p>
+                <ul>
+                   <li>
+                    <i></i>
+                    <span>必须使用网站提供的《授权书》，请您下载。</span>
+                    <span class="download"> 下载</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>填写已下载的授权书，不得涂改。</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>必须为清楚，完整的加盖公章扫描件或数码照</span>
+                  </li>
+                  <li>
+                    <i></i>
+                    <span>仅支持JPG,PNG的图片格式，图片大小不超过3MB</span>
+                  </li>
+                </ul>
+               <div class="download" v-if="unauthorized">
+            <a href="#">授权书模板下载</a>
+          </div>
+              </div>
+              <!-- <el-dialog :visible.sync="dialogVisible3" size="tiny"> -->
+               <img width="100%" :src="this.sqBookImageUrl" alt> 
+              <!-- </el-dialog> -->
+            </div>
+            <div v-if="authenticated">
+              <img
+                width="100%"
+                :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + imgShow.powerOfAttorneyFiles"
+                alt
+              >
+            </div>
+          </el-form-item>
+          
+        </template>
+        <div v-if="authenticated" class="spread">
+          <div class="overflow">
+          <p v-for="comQuerymes in comQueryme.custOrganizationElementList" :key="comQuerymes">
+            <label for>{{comQuerymes.elementName}}:</label>
+            <template
+              v-if="comQuerymes.elementCode !='isOperation' && comQuerymes.elementCode !='property'"
+            >
+              <span>{{comQuerymes.elementValues}}</span>
+            </template>
+            <template v-if="comQuerymes.elementCode=='isOperation'">
+              <span>{{comQuerymes.elementValues=='true'?'有':'没有'}}</span>
+            </template>
+            <template v-if="comQuerymes.elementCode=='property'">
+              <span>{{comQuerymes.elementValues =='true'?'营利':'非盈利'}}</span>
+            </template>
+          </p>
+          <p>
+            <label for>地址</label>
+            <span>{{comQueryme.orgAddress}}</span>
+          </p>
+          <p>
+            <label for>名称：</label>
+            <span>{{comQueryme.orgFullName}}</span>
+          </p>
+          <p>
+            <label for>地区：</label>
+            <span>{{provinceName + ' &nbsp;' + countyName + '&nbsp; ' +cityName}}</span>
+          </p>
+          </div>
+          <div class="upimg">
+          <p class="upImgShow" v-for="comQueryzs in comQueryme.paperworkInfoList" :key="comQueryzs">
+            <label for>{{comQueryzs.name}}:</label>
+
+            <img
+              class="img"
+              :src="'http://res-svc-dev.jiangtai.com/res/download?fileId=' + comQueryzs.url"
+              alt
+            >
+          </p>
+          </div>
+        </div>
+        <!-- 卫生局结束 -->
+        <div class="info-btn flex-box mt50 mb20">
+          <el-form-item>
+            <el-button
+              v-if="firstVerify"
+              type="primary"
+              @click="submitForm('formCom')"
+              class="box-center"
+            >上传认证资料</el-button>
+            <el-button
+              v-if="editVertify"
+              type="primary"
+              @click="EditsubmitForm('formCom')"
+              class="box-center"
+            >修改认证资料</el-button>
+          </el-form-item>
+        </div>
+      </el-form>
+    </div>
+  </div>
+</template>
+<script>
+import ComSteps from "./component/comSteps";
+import { CodeToText, regionData } from "element-china-area-data";
+import UserService from "../../../service/UserService";
+import ComMes from "./component/comTop";
+import { getProductsAuthent } from "../../../service/ProductsService";
+export default {
+  components: { ComSteps, ComMes },
+  data() {
+    var checkPhone = (rule, value, callback) => {
+      var reg = /^1(3|4|5|6|7|8|9)\d{9}$|^0\d{2,3}-?\d{7,8}$|\d{7,8}$/;
+      if (!value) {
+        return callback(new Error("请输入电话号码"));
+      } else if (!reg.test(value)) {
+        callback(new Error("请输入正确的电话号码"));
+      } else {
+        callback();
+      }
+    };
+    return {
+      firstVerify:true,//第一次认证
+      editVertify:false,//修改认证
+      orgelement:'',
+      countyName: "",
+      cityName: "",
+      provinceName: "",
+      comQueryme: "", //企业信息查询
+      clear: 0,
+      stepShow: false,
+      vertify: "", //判断有无认证
+      comMessage: "", //企业信息
+      orgType: "",
+      orgLevel: "",
+      adminDept: "",
+      medOrgType: "",
+      isOperation: "",
+      property: "",
+      job: "",
+      department: "",
+      dialogVisible2: "",
+      dialogVisible3: "",
+      shibai: "", //审核失败按钮标识
+      waitting: "", //等待标识
+      success: "", //成功
+      step: "",
+      reason: "",
+      authenticated: false, //已认证回显
+      unauthorized: true, //未认证字段显示
+      tempArrDatas: {},
+      provinces: [],
+      shi: "",
+      contrys: "",
+      yl: true,
+      dialogImageUrl: "", //上传
+      dialogVisible: false,
+      upcertifyImageUrl: "", //上传许可证
+      upNumberImageUrl: "", //上传信用代码
+      sqBookImageUrl: "", //上传授权书this.imgShow.powerOfAttorneyFiles
+      formCom: {
+        sheng: "",
+        city: "",
+        name: "",
+        region: "",
+        grate: "", //等级
+        grate1: "", //等级
+        grate2: "", //等级
+        address: "", //机构地址
+        department: "", //卫生行政主管部门
+        yljgType: "", //医疗机构类型
+        isSs: "有", //是否有手术
+        jyxz: "营利", //经营性质
+        shi: "",
+        contrys: "",
+        sheng: "",
+        jgName: "", //机构姓名
+        lxrName: "", //联系人姓名
+        lxrNumber: "", //联系人手机号
+        lxrEmail: "", //联系人email
+        bumen: "", //部门
+        zhiwu: "", //职务
+        xkzNumber: "", //许可证
+        xyNumber: "", //
+        bankNumber: "", //银行卡号
+        bankName: "", //开户行
+        birthday: "", //出生日期
+        Email: "", //邮箱
+        types: "",
+        date1: "",
+        address: "",
+        usercode: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      },
+      value1: true, //开关控制
+      value2: true,
+      tip: "请填写以下企业认证信息，系统会根据您填写的资料进行审核",
+      provens: [],
+      citys: [],
+      ruleForm: {
+        location: [],
+        position: "",
+        nature: "",
+        name: "",
+        scope: "",
+        field: [],
+        person1: "",
+        phone1: "",
+        person2: "",
+        phone2: "",
+        paperworkInfoList: []
+      },
+      dialogVisible: false,
+      ruleForm: {},
+      ruleName: "",
+      dialogImageUrl: "", //上传照片
+      rules: {
+        types: [{ required: true, message: "请选择市", trigger: "change" }],
+        yljgType: [
+          { required: true, message: "请选择企业地址", trigger: "change" }
+        ],
+        jgName: [
+          { required: true, message: "请输入详细地址", trigger: "blur" }
+        ],
+        grate1: [{ required: true, message: "请选择市", trigger: "change" }],
+        address: [{ required: true, message: "请填写地址", trigger: "blur" }],
+        department: [
+          { required: true, message: "请选择市", trigger: "change" }
+        ],
+        isSs: [{ required: true, message: "请选择市", trigger: "change" }],
+        jyxz: [{ required: true, message: "请选择市", trigger: "change" }],
+        name: [{ required: true, message: "请输入公司名称", trigger: "blur" }],
+        sheng: [{ required: true, message: "请选择省份", trigger: "change" }],
+        city: [{ required: true, message: "请选择市", trigger: "change" }],
+        contrys: [{ required: true, message: "请选择市", trigger: "change" }],
+        lxrName: [{ required: true, message: "请选择市", trigger: "blur" }],
+        lxrNumber: [{ required: true, message: "请选择市", trigger: "blur" }],
+        lxrEmail: [{ required: true, message: "请选择市", trigger: "blur" }],
+        zhiwu: [{ required: true, message: "请选择市", trigger: "change" }],
+        bumen: [{ required: true, message: "请选择市", trigger: "change" }],
+        xkzNumber: [{ required: true, message: "请选择市", trigger: "blur" }],
+        xyNumber: [{ required: true, message: "请选择市", trigger: "blur" }],
+        bankNumber: [{ required: true, message: "请选择市", trigger: "blur" }],
+        bankName: [{ required: true, message: "请选择市", trigger: "blur" }],
+        person1: [{ required: true, message: "请输入姓名", trigger: "blur" }],
+        phone1: [{ required: true, validator: checkPhone, trigger: "blur" }]
+      },
+      industryData: [],
+      natureData: [],
+      regionSector: "",
+      industrySector: "",
+      sameHolder: false,
+      nature: "",
+      field: "",
+      fieldCode: "",
+      paperworkInfoList: [],
+      hxsheng: "",
+      hxshi: ""
+    };
+  },
+  watch: {},
+  created() {
+    //this.init();
+   this.comMessages(); //获取企业信息
+    this.getCityData(); //获取地区
+    this.sqBookImageUrl;
+    this.comQuery();
+    this.editChangeMes();
+    this.showImg();
+    //this.getProductsAuthents()
+  },
+  mounted() {
+
+  },
+
+  computed: {
+    // 获取地域信息
+    regionData() {
+      return regionData;
+    },
+    //获取查询信息回显
+    showMap() {
+      let map = {};
+      let aa = this.comQueryme
+        ? this.comQueryme.custOrganizationElementList
+        : {};
+       // for(var a in aa ){
+         // map[a.elementCode] = a.elementValues
+       // }
+      aa.forEach(row => {
+        map[row.elementCode] = row.elementValues;
+      });
+      return map;
+    },
+    showMap1(val){
+       let map = {};
+      let aa = this.comQueryme
+        ? this.comQueryme.custOrganizationElementList
+        : {};
+       //for(var a in aa ){
+          //map[a.elementCode] = a.valuesCode
+        //}
+        aa.forEach(row => {
+        map[row.elementCode] = row.valuesCode;
+      });
+      return map;
+    },
+    //回显证件号码
+    paperworkInfoLi() {
+      let map1 = {};
+      let aa1 = this.comQueryme ? this.comQueryme.paperworkInfoList : {};
+      aa1.forEach(row => {
+        map1[row.code] = row.value;
+      });
+      return map1;
+    },
+    //回显图片
+    imgShow() {
+      let url = {};
+      let urlList = this.comQueryme ? this.comQueryme.paperworkInfoList : {};
+      urlList.forEach(row => {
+        url[row.code] = row.url;
+      });
+      return url;
+    }
+  },
+  methods: {
+    // 地区编码解析
+    areaCodeToObj(code) {
+      this.countyName = CodeToText[code]; // 区名称
+      console.log(this.countyName);
+      let cityCode = code.substring(0, 4) + "00"; // 市代码
+      this.cityName = CodeToText[cityCode]; // 市名称
+      let provinceCode = code.substring(0, 2) + "0000"; // 省代码
+      this.provinceName = CodeToText[provinceCode]; //省名称
+    },
+    address() {
+      for (var prov in this.provinces) {
+        for (var city in this.provinces[prov].children) {
+          for (var contry in this.provinces[prov].children[city].children) {
+            if (
+              this.provinces[prov].children[city].children[contry].code ==
+              this.comQueryme.provinceCode
+            ) {
+              this.formCom.sheng = this.provinces[prov].code;
+              this.$nextTick(() => {
+                //this.hxsheng = this.provinces[prov].name;
+              });
+              this.selectProChnage();
+              this.formCom.city = this.provinces[prov].children[city].code;
+              this.citysChage();
+              this.formCom.qu = this.comQueryme.provinceCode;
+            }
+          }
+        }
+      }
+    },
+    getOptionsData(elementCode) {
+      let data;
+      if(this.comMessage){
+        data =  this.comMessage.filter(
+          item => item.elementCode == elementCode
+        )
+        var afg = []
+        if (data[0]['orgElementRelaValuesVMList']) {
+          afg = data[0].orgElementRelaValuesVMList
+        }
+        return afg.length > 0 ? afg : {};
+      }
+      
+    },
+    //处理回显
+    svr (val, code) {
+        for (var i in this.getOptionsData(val)) {
+          if (this.getOptionsData(val)[i].valuesCode == code) {
+          return this.getOptionsData(val)[i]
+          }
+        }
+    },
+    //步骤条控制
+    headlerS(val1, val2) {
+      this.step = val1;
+      this.reason = val2;
+    },
+    //重新填写信息回显
+    first(val) {
+      this.$nextTick(() => {
+        //this.init();
+        this.getCityData(); //获取地区
+        // this.comMessage();//获取机构等级
+        this.comMessages(); //获取企业信息
+        this.authenticated = false;
+        this.unauthorized = true;
+        this.shibai = val.shibai;
+        this.step = val.step;
+        this.success = val.success;
+        this.dis = val.dis;
+        this.clear = val.clear;
+        this.stepShow = val.stepShow;
+        this.editVertify = val.editVertify;
+        this.firstVerify =val.firstVerify
+      });
+       this.formCom = {
+        sheng: "",
+        city: "",
+        name: "",
+        region: "",
+        grate: "", //等级
+        grate1: "", //等级
+        grate2: "", //等级
+        address: this.comQueryme.orgAddress, //机构地址
+        department:this.showMap1.adminDept, //卫生行政主管部门
+        yljgType: this.showMap.medOrgType, //医疗机构类型
+        isSs: this.showMap1.isOperation == "true" ? "有" : "没有", //JSON.parse(this.showMap.isOperation), //是否有手术
+        jyxz: this.showMap1.property == "true" ? "营利" : "非营利", // JSON.parse( this.showMap.property), //经营性质
+        shi: "",
+        contrys: this.comQueryme.provinceCode,
+        sheng: this.comQueryme.provinceCode,
+        jgName: this.comQueryme.orgFullName, //机构姓名
+        lxrName: this.showMap.linkManName, //联系人姓名
+        lxrNumber:  this.showMap.linkManPhone, //联系人手机号
+        lxrEmail: this.showMap.linkManEmail, //联系人email
+        bumen: this.showMap1.department, //部门
+        zhiwu: this.showMap1.job, //职务
+        xkzNumber: this.paperworkInfoLi.exbl, //许可证
+        xyNumber: this.paperworkInfoLi.bl, //
+        types: this.showMap1.orgType,
+        date1: "",
+        address: this.comQueryme.orgAddress,
+        usercode: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      };
+      //解决回显问题
+      var uis = [
+        {
+          name: 'department',
+          code: 'adminDept'
+        },
+        {
+          name: 'yljgType',
+          code: 'medOrgType'
+        },
+         {
+          name: 'bumen',
+          code: 'department'
+        },
+         {
+          name: 'zhiwu',
+          code: 'job'
+        },
+        {
+          name:'types',
+          code:"orgType"
+        }
+      ]
+      for (var o in uis) {
+        console.log('this.formCom[uis[o].name]', this.formCom[uis[o].name])
+        this.formCom[uis[o].name] = this.svr(uis[o].code, this.formCom[uis[o].name])
+      }
+      //回显地区
+      for (var prov in this.provinces) {
+        for (var city in this.provinces[prov].children) {
+          for (var contry in this.provinces[prov].children[city].children) {
+            if (
+              this.provinces[prov].children[city].children[contry].code ==
+              this.comQueryme.provinceCode
+            ) {
+              this.formCom.sheng = this.provinces[prov].code;
+              this.$nextTick(() => {
+                //this.hxsheng = this.provinces[prov].name;
+              });
+              this.selectProChnage();
+              this.formCom.city = this.provinces[prov].children[city].code;
+              this.citysChage();
+              this.formCom.contrys = this.comQueryme.provinceCode;
+            }
+          }
+        }
+      }
+      this.comMessages();
+      this.sqBookImageUrl;
+      console.log(111);
+    },
+    //   orgtypess(){
+    //      var org = '';
+    //       org = this.comMessage.filter(item => {
+    //         return item.elementCode == orgType;
+    //       });
+    //       console.log(org);
+    //       if (org[0].orgElementRelaValuesVMList) {
+    //         this.orgType = org[0].orgElementRelaValuesVMList;
+    //       }
+    //   },
+    //回显图片
+    showImg() {
+      var aaaaa = this.imgShow.powerOfAttorneyFiles;
+      this.$get(
+        "http://res-svc-dev.jiangtai.com/res/download?fileId=aaaaa"
+      ).then(res => {
+        console.log(res);
+      });
+    },
+    jgLever() {
+      let data = this.comMessage.filter(item => item.elementCode == "orgLevel");
+      return data.length > 0 ? data[0].orgElementRelaValuesVMList : {};
+      this.formCom.grate2 = "";
+    },
+    jss() {
+      let sss = this.jgLever().filter(
+        item => item.valuesCode == this.formCom.grate1
+      );
+      console.log("sssss", sss, this.formCom.grate1, this.formCom.grate2);
+      if (sss.length > 0) {
+      }
+
+      return sss.length > 0 ? sss[0].children : {};
+    },
+    //   获取地区
+    selectProChnage(province) {
+      var cityss = {};
+      cityss = this.provinces.filter(item => {
+        return item.code == this.formCom.sheng;
+      });
+      console.log(cityss);
+      if (cityss[0].children) {
+        this.shi = cityss[0].children;
+      }
+      console.log(this.formCom.sheng);
+    },
+    contryChange(val){
+       this.comMessages()
+    },
+    citysChage(val) {
+      var contry = {};
+      contry = this.shi.filter(item => {
+        return item.code == this.formCom.city;
+      });
+      console.log(contry);
+      if (contry[0].children) {
+        this.contrys = contry[0].children;
+      }
+      console.log(this.formCom.sheng);
+    },
+    //   上传许可证
+    certifyhandleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    certifyhandlePicturePreview(file) {
+      this.$nextTick(() => {
+        this.upcertifyImageUrl = file.code;
+        this.dialogVisible1 = true;
+      });
+    },
+    // 上传信用代码
+    upNumberhandleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    upNumberhandlePicturePreview(file) {
+      this.upNumberImageUrl = file.url;
+      this.dialogVisible2 = true;
+    },
+    //上传授权书
+    sqBookhandleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    sqBookhandlePicturePreview(file) {
+      this.sqBookImageUrl = this.imgShow.powerOfAttorneyFiles;
+      this.dialogVisible3 = true;
+    },
+    //上传许可证
+    upcertifySuccess(res, file) {
+      console.log(res);
+      this.upcertifyImageUrl = res.list[0].url;
+    },
+    //上传信用号码
+    upNumberSuccess(res, file) {
+      console.log(res);
+      this.upNumberImageUrl =res.list[0].url;
+    },
+    //上传授权书
+    sqBookSuccess(res, file) {
+      //this.sqBookImageUrl = URL.createObjectURL(file.raw);
+      this.sqBookImageUrl =  + res.list[0].url;
+      console.log(res.list[0].url)
+    },
+
+    uploadFile(e, m) {
+      console.log(e, m);
+      let formData = new FormData();
+      formData.append("file", e.target.files[0]);
+      this.$post(this.$apiUrl.COM_UPLOAD, formData).then(res => {
+        if (res.code === "0000") {
+          this.ruleForm.paperworkInfoList.find(items => items.code == m.code)[
+            "url"
+          ] = res.list[0].url;
+          //this.$refs[m.code].src = this.$apiUrl.COM_INDENT + res.list[0].url
+
+          //m.url = res.list[0].url;
+          this.$forceUpdate(); // 数据层太多不会触发vue的render 需要手动调用forceupdate重新渲染页面
+        }
+      });
+    },
+    editChangeMes() {
+      var types = this.showMap.orgType;
+      var formCom = {
+        sheng: "",
+        city: "",
+        name: "",
+        region: "",
+        grate: "", //等级
+        grate1: "", //等级
+        grate2: "", //等级
+        address: this.comQueryme.orgAddress, //机构地址
+        department: "", //卫生行政主管部门
+        yljgType: "", //医疗机构类型
+        isSs: true, //是否有手术
+        jyxz: false, //经营性质
+        shi: "",
+        contrys: this.comQueryme.provinceCode,
+        sheng: "",
+        jgName: this.comQueryme.orgFullName, //机构姓名
+        lxrName: "", //联系人姓名
+        lxrNumber: "", //联系人手机号
+        lxrEmail: "", //联系人email
+        bumen: this.showMap.department, //部门
+        zhiwu: this.showMap.job, //职务
+        xkzNumber: "", //许可证
+        xyNumber: "", //
+        bankNumber: "", //银行卡号
+        bankName: "", //开户行
+        birthday: "", //出生日期
+        Email: "", //邮箱
+        types: "",
+        date1: "",
+        address: "",
+        usercode: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      };
+      this.formCom = formCom;
+      console.log(99999999999999);
+    },
+    //查询企业信息
+    comQuery() {
+      let comQuerydata = {
+        userCode: window.localStorage.getItem("userCode")
+        //userCode:'19UC1571330295095885824'
+      };
+      this.$get(this.$apiUrl.COM_QUERY, comQuerydata).then(res => {
+        if (res.code === "0000") {
+          this.areaCodeToObj(res.data.provinceCode);
+          this.comQueryme = res.data;
+          console.log(this.comQueryme);
+          //等待审核
+          if (res.data.auditStatus == "4") {
+            this.vertify = true;
+            this.stepShow = true;
+            this.step = 2;
+            this.authenticated = true;
+            this.unauthorized = false;
+            this.dis = false;
+            this.waitting = 1;
+            this.firstVerify =false
+          } else if (res.data.auditStatus == "0") {
+            //审核成功
+            this.vertify = false;
+            this.stepShow = true;
+            this.step = 3;
+            this.authenticated = true;
+            this.unauthorized = false;
+            this.dis = false;
+            this.success = 1;
+            this.firstVerify =false
+          } else if (res.data.auditStatus == "1") {
+            //审核失败
+            this.vertify = true;
+            this.stepShow = true;
+            this.step = 2;
+            this.authenticated = true;
+            this.unauthorized = false;
+            this.dis = false;
+            this.shibai = 5;
+            this.firstVerify =false
+          }
+          console.log(111);
+        } else {
+          console.log(11111111111111888888888888111)
+        
+        }
+      });
+    },
+    // 保存信息
+    uploadInfo() {
+      var dataList = [];
+      let addList = {};
+      let addData = this.comMessage.filter(
+        item => item.elementCode == "orgLevel"
+      )
+      var addDatalist = []
+      if (addData[0]['orgElementRelaValuesVMList']) {
+       addDatalist = addData[0].orgElementRelaValuesVMList
+      }
+      if(addDatalist){
+           for (var i in addDatalist) {
+        if (addDatalist[i].valuesCode == this.formCom.grate1) {
+          addList = {
+            valuesCode: addDatalist[i].valuesCode,
+            elementValues: addDatalist[i].elementValues
+          }
+        }
+      }
+      }
+      var data = {
+        orgFullName: this.formCom.jgName, //联系人
+        orgAddress: this.formCom.address, //地址
+        provinceCode: this.formCom.contrys, //地区
+        // code: this.$localStorageUtil.getLocalStorage("code").code, //企业编
+        orgElementVOList: [
+          {
+            elementCode: "adminDept",
+            elementName: "行政管理部门",
+            valuesCode:this.formCom.department.valuesCode,
+            elementValues:this.formCom.department.elementValues,
+          },
+          {
+            elementCode: "orgType",
+            elementName: "机构类型",
+            valuesCode: this.formCom.types.valuesCode,
+            elementValues:this.formCom.types.elementValues,
+          },
+          {
+            elementCode: "medOrgType",
+            elementName: "医疗机构类型",
+            valuesCode: this.formCom.yljgType.valuesCode,
+            elementValues: this.formCom.yljgType.elementValues
+          },
+          {
+            elementCode: "orgLevel",
+            elementName: "机构等级",
+            valuesCode:
+              addList.valuesCode + "," + this.formCom.grate2.valuesCode,
+            elementValues:
+              addList.elementValues + "," + this.formCom.grate2.elementValues
+          },
+
+          {
+            elementCode: "job",
+            elementName: "所属职务",
+            valuesCode: this.formCom.zhiwu.valuesCode,
+            elementValues: this.formCom.zhiwu.elementValues,
+          },
+          {
+            elementCode: "department",
+            elementName: "所属部门",
+            valuesCode:this.formCom.bumen.valuesCode,
+            elementValues:this.formCom.bumen.elementValues,
+          },
+          {
+            elementCode: "linkManPhone",
+            elementName: "联系人手机号码",
+            elementValues: this.formCom.lxrNumber
+          },
+          {
+            elementCode: "linkManEmail",
+            elementName: "联系人邮箱",
+            elementValues: this.formCom.lxrEmail
+          },
+          {
+            elementCode: "linkManName",
+            elementName: "联系人姓名",
+            elementValues: this.formCom.lxrName
+          },
+          {
+            elementCode: "isOperation",
+            elementName: "是否有手术",
+            elementValues: this.formCom.isSs == "有" ? "true" : "false",
+            valuesCode:
+              this.formCom.isSs == "有"
+                ? "med_isOperationY"
+                : "med_isOperationN"
+          },
+          {
+            elementCode: "property",
+            elementName: "经营性质",
+            elementValues: this.formCom.jyxz == "营利" ? "true" :"false",
+            valuesCode: this.formCom.jyxz == "营利" ? "med_property01" : "med_property02"
+          }
+        ],
+        paperworkInfoList: [
+          {
+            code: "bl",
+            name: "营业执照",
+            url: this.upcertifyImageUrl,
+            value: this.formCom.xyNumber
+          },
+          {
+            code: "exbl",
+            name: "执行许可证",
+            // url: "1552328449245315072",
+            url: this.upNumberImageUrl,
+            value: this.formCom.xyNumber
+          },
+          {
+            code: "powerOfAttorneyFiles",
+            name: "授权书",
+            //url: "1552328449245315072"
+            url: this.sqBookImageUrl
+          }
+        ],
+
+        userCode: window.localStorage.getItem("userCode"), //用户编码
+        ///userCode:"19UC1571330295095885824",
+        createCode: window.localStorage.getItem("userCode")
+      };
+      console.log(this.formCom.grate2);
+      this.$post(this.$apiUrl.COM_SAVE, data).then(res => {
+        if (res.code === "0000") {
+          console.log(111);
+          this.firstVerify=false
+          this.comQuery()
+        }
+      });
+    },
+    // 删除授权书
+    delBook() {
+      this.ruleForm.paperworkInfoList.find(item => {
+        if (item.code == "powerOfAttorneyFiles") {
+          item.url = "";
+        }
+        this.$forceUpdate();
+      });
+    },
+    //   地区接口
+    getCityData: function() {
+      // GET /api/v1/user/areainfo
+
+      var that = this;
+      var params = {};
+      this.$get(this.$apiUrl.COM_AREA, params).then(response => {
+        // var userService = new UserService();
+        // var response = await userService.login(params);
+        console.log(response);
+        var code = response.code;
+
+        if (code == "0000") {
+          if (response.list.length !== 0) {
+            this.provinces = response.list;
+            console.log(this.provinces);
+            this.isNull = true;
+            let datas = response.list[0];
+            this.changeEnd();
+            this.changeStart();
+          }
+        } else {
+          this.$message({
+            message: response.msg
+          });
+        }
+      });
+    },
+    //获取认证信息
+    getProductsAuthents(){
+         getProductsAuthent('19UC1571330295095885824').then(res => {
+           if (res.code == "0000"){
+               console.log(11111111111111111111118888888)
+           }
+         })
+    },
+    // 获取企业信息接口
+    comMessages: function() {
+      //   console.log(1111)
+      var that = this;
+      var params = {
+        channelCode: "med",
+        areaCode: '110100'
+      };
+      this.$get(this.$apiUrl.COM_MESSAGE, params).then(response => {
+        // var userService = new UserService();
+        // var response = await userService.login(params);
+        console.log(response);
+        // var code = response.code;
+        if (response.code == "0000") {
+          if (response.list.length !== 0) {
+            console.log(response);
+
+            this.comMessage = response.list;
+            //编辑回显信息
+
+            // this.formCom = formCom;
+
+            console.log(this.comMessage);
+            // this.provinces = response.list;
+            // console.log(this.provinces);
+            // this.isNull = true;
+            // let datas = response.list[0];
+            // this.changeEnd();
+            // this.changeStart();
+          }
+        } else {
+          this.$message({
+            message: response.msg
+          });
+        }
+      });
+    },
+
+    choseBlock: function(e) {
+      this.E = e;
+      // console.log(this.E)
+    },
+    // 地区结束
+
+    recognition() {
+      this.$post(
+        "https://dm-58.data.aliyun.com/rest/160601/ocr/ocr_business_license.json",
+        { image: "" }
+      ).then(res => {
+        console.log(res);
+      });
+    },
+
+    getNature(value) {
+      let obj = {};
+      obj = this.natureData.find(item => {
+        return item.valuesCode == value;
+      });
+      this.nature = obj.elementValues;
+    },
+
+    // 保存基本信息
+    async uploadInfo000() {},
+    filters: {
+      changeName(val) {
+        if (val == "营业执照") {
+          return "社会信用代码：";
+        } else {
+          return val + "号：";
+        }
+      }
+    },
+    // 点击提交
+    submitForm(formName) {
+      //this.$refs[formName].validate(valid => {
+      //if (valid) {
+      this.uploadInfo();
+      this.$nextTick(() => {
+        // 成功状态设置
+        //this.step = 2;
+        //this.authenticated = true;
+        //this.unauthorized = false;
+       // this.dis = true;
+        //this.stepShow = true;
+        //this.waitting = 1; 
+      });
+    },
+    EditsubmitForm(){
+        
+    }
+  }
+};
+</script>
+
+
+<style lang="less" >
+.el-radio-button {
+  margin-right: 20px;
+  border-left: 1px solid #dcdfe6;
+  border-radius: 4px;
+}
+.el-radio-button--medium .el-radio-button__inner {
+  padding: 4px 20px;
+}
+.el-radio-button .el-radio-button__inner{
+      border-left: 1px solid #DCDFE6;
+    border-radius:4px 4px 4px 4px!important;
+    width: 90px;
+    height: 30px;
+    line-height: 20px;
+}
+
+
+.spread {
+  .overflow{
+    overflow: hidden;
+  }
+  .upimg{
+    overflow: hidden;
+
+    p{
+      margin-bottom:20px
+    }
+  }
+  p{
+    float: left;
+    width: 50%;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  label {
+       margin-right: 20px;
+    text-align: right;
+    color: #a1a1a1;
+    display: inline-block;
+    width: 105px;
+  }
+}
+.elitem .el-form-item__label {
+  width: 180px !important;
+}
+
+#lever .el-input__inner {
+  width: 230px;
+}
+.el-input__inner {
+}
+.elitem .el-input__inner {
+  width: 460px;
+}
+.elitem .el-upload-list--picture-card .el-upload-list__item {
+  width: 225px;
+  height: 200px;
+  margin-top: -35px;
+}
+#area .el-form-item .is-required .el-form-item--medium {
+  float: left;
+}
+#area .el-form-item {
+  margin-right: 10px;
+  float: left !important;
+}
+#area .el-input__inner {
+  width: 145px;
+}
+.el-button--primary {
+  background: #409eff;
+}
+.el-button--primary:hover {
+  background: #409eff !important;
+}
+.el-button--primary:focus {
+  background: #409eff;
+}
+.el-input--medium .el-input__inner {
+  height: 43px;
+  line-height: 43px;
+}
+.download {
+ // margin: 0 auto;
+  width: 30%;
+  a {
+    color: #409eff;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+}
+.green {
+  color: #008f5f;
+}
+.red {
+  color: red;
+}
+.up {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 203px;
+  background: #e4f2ff;
+  width: 225px;
+  border-radius: 10px;
+  p {
+    margin-top: 71px;
+    text-align: center;
+    font-size: 59px;
+    color: #4396e2;
+  }
+ 
+  .upload{
+       text-align: center;
+    color: #999999;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 133px;
+}
+  
+}
+.el-form-item__content .upDetail {
+  margin-left: 20px;
+  float: left;
+ .line{
+       height: 1px;
+    background: #f3f3f3;
+    margin: 10px 0;
+ }
+  p {
+    font-size: 20px;
+    color: #999999;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  ul {
+    li {
+      line-height: 30px;
+      color: #999999;
+      i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #a1a1a1;
+        
+      }
+      span {
+        font-size: #a1a1a1;
+      }
+      .download{
+        color: #409eff
+      }
+       
+
+    }
+  }
+}
+// p{
+// width: 30px;
+// background: blue;
+// position: absolute;
+// bottom: 0;
+// }
+
+.up .el-upload--picture-card {
+     width: 225px;
+    height: 204px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #409eff03;
+    line-height: 30px;
+}
+.info-btn .el-form-item__content {
+  margin: 0 !important;
+}
+.info-btn .el-button--primary:hover {
+  background-color: #06b077;
+}
+.info-btn .el-button--primary:active {
+  background-color: #008f5f;
+}
+.form-item .el-form-item__content {
+  margin-left: 130px !important;
+}
+.form-item .el-form-item__label {
+  width: 130px !important;
+}
+</style>
+
+
+
+
+
+
+<template>
+  <div class="w80p box-center overflow">
+    <div
+      class="w100p  flex-box"
+      v-if="shibai == 5"
+    >
+      <button
+        class="btn-submit-blue"
+        @click="goIndent"
+      >重新提交审核</button>
+    </div>
+    <!-- <p class="f18 pt20 pb20 color-green">企业基本信息</p> -->
+    <!-- <div class="lh24">
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>企业所在区域：</div>
+        </el-col>
+        <el-col :span="20">
+          <div>{{provinceName}}，{{cityName}}，{{countyName}}</div>
+          <div>{{userTemplateVO.orgAddress}}</div>
+        </el-col>
+      </el-row>
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>经营性质：</div>
+        </el-col>
+        <el-col :span="20">
+          <div>{{businessNature.elementValues}}</div>
+        </el-col>
+      </el-row>
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>企业名称：</div>
+        </el-col>
+        <el-col :span="20">
+          <div>{{userTemplateVO.orgFullName}}</div>
+        </el-col>
+      </el-row>
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>社会信用代码：</div>
+        </el-col>
+        <el-col :span="20">
+          <div>{{uscCode}}</div>
+        </el-col>
+      </el-row>
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>主要经营范围：</div>
+        </el-col>
+        <el-col :span="20">
+          <div>{{userTemplateVO.businessScope}}</div>
+        </el-col>
+      </el-row>
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>行业领域：</div>
+        </el-col>
+        <el-col :span="20">
+          <div>{{industry.elementValues}}</div>
+        </el-col>
+      </el-row>
+    </div> -->
+    <!-- <p class="f18 pt20 pb20 color-green">企业联系人信息</p>
+    <div class="lh24">
+      <el-row class="pb10">
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>保险事务联系人：</div>
+        </el-col>
+        <el-col :span="6">
+          <div>{{userTemplateVO.businessName}}</div>
+        </el-col>
+        <el-col :span="4">
+          <div class="text-right color-gray-6"><i class="color-f45f5f"> * </i>联系电话：</div>
+        </el-col>
+        <el-col :span="6">
+          <div>{{userTemplateVO.businessPhone}}</div>
+        </el-col>
+      </el-row>
+      <el-row
+        class="pb10"
+        v-if="userTemplateVO.responseName"
+      >
+        <el-col :span="4">
+          <div class="text-right color-gray-6">安全部门负责人：</div>
+        </el-col>
+        <el-col :span="6">
+          <div>{{userTemplateVO.responseName}}</div>
+        </el-col>
+        <el-col :span="4">
+          <div class="text-right color-gray-6">联系电话：</div>
+        </el-col>
+        <el-col :span="6">
+          <div>{{userTemplateVO.responsePhone}}</div>
+        </el-col>
+      </el-row>
+    </div> -->
+    <!-- <p class="f18 pt20 pb20 color-green">认证资料</p>
+    <ul class="mt20 mb40 flex-box text-center lh40">
+      <li
+        class="box"
+        v-for="(item,index) in paperworkInfoList"
+        :key="index"
+      >
+        <img :src="$apiUrl.COM_INDENT+item.url">
+        <p style="width: 100%;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{item.name}}</p>
+      </li>
+    </ul> -->
+    <div
+      class="flex-box mb40"
+      v-if="success == 1"
+    ><button
+        class="btn-submit-blue"
+        @click="goIndent"
+      >变更认证信息</button></div>
+  </div>
+</template>
+<script>
+import UserService from '../../../../service/UserService'
+import {
+  provinceAndCityData,
+  regionData,
+  provinceAndCityDataPlus,
+  regionDataPlus,
+  CodeToText,
+  TextToCode
+} from "element-china-area-data";
+export default {
+  name: "ComMes",
+  props: {
+       step: {
+      default: ""
+    },
+    shibai:{
+        default: ""
+    },
+    success:{
+        default: ""
+    },
+    
+  },
+  data() {
+    return {
+      res: {},
+      step: 0,
+      reason: "",
+      userTemplateVO: {}, //整体数据
+      uscCode: "",
+      provinceName: "", //省
+      cityName: "", //市
+      countyName: "", //区
+      industry: {},
+      businessNature: {},
+      paperworkInfoList: [],
+      first:{
+           //authenticated :false,
+          // unauthorized :true,
+           shibai:'',
+           success:2,
+           step:-1,
+           clear: + 1,
+           stepShow:false,
+           vertyfy:true,
+           editVertify:true,
+           firstVerify:false
+           
+      }
+    };
+  },
+  created() {
+    // this.init();
+  },
+  methods: {
+    async init() {
+      var data = {
+        userCode: this.$localStorageUtil.getLocalStorage("userCode").userCode
+      };
+      // this.$get(this.$apiUrl.COM_INFO, data).then(res => {
+      // 调用认证信息接口 
+        var userService = new UserService();
+        let res = await userService.AuthenInfo(data);
+        console.log(res);
+        if (res) {
+          this.res = res;
+          if (res.data) {
+            if (res.data.reasonForReturn) {
+              this.reason = res.data.reasonForReturn;
+            }
+            if (res.data.auditStatus == 0) {
+              this.step = 3;
+            } else if (res.data.auditStatus == 1) {
+              this.step = 4;
+            } else if (res.data.auditStatus == 2) {
+              this.step = 5;
+            } else {
+              console.log(res);
+              this.$router.push({
+                path: this.$globalFontUrl.COMPANY_INDENT,
+                query: res
+              });
+            }
+            this.$emit("headlerStep", this.step, this.reason);
+            if (res.data.powerOfAttorneyFiles) {
+              res.data.paperworkInfoList.push({
+                code: "powerOfAttorneyFiles",
+                name: "授权书",
+                url: res.data.powerOfAttorneyFiles,
+                value: ""
+              });
+            }
+            this.userTemplateVO = res.data;
+
+            this.paperworkInfoList = res.data.paperworkInfoList;
+
+            console.log(this.paperworkInfoList);
+            console.log("第三步");
+            res.data.paperworkInfoList.forEach(item => {
+              if (item.code == "bl") {
+                this.uscCode = item.value;
+              }
+            });
+            res.data.custOrganizationElementList.forEach(item => {
+              if (item.elementCode == "industry") {
+                this.industry = item;
+              } else if (item.elementCode == "businessNature") {
+                this.businessNature = item;
+              }
+            });
+            this.areaCodeToObj(res.data.provinceCode);
+          } else {
+            this.$router.push({
+              path: this.$globalFontUrl.COMPANY_INDENT
+            });
+          }
+        }
+      // });
+    },
+    // 地区编码解析
+    areaCodeToObj(code) {
+      this.countyName = CodeToText[code]; // 区名称
+      let cityCode = code.substring(0, 4) + "00"; // 市代码
+      this.cityName = CodeToText[cityCode]; // 市名称
+      let provinceCode = code.substring(0, 2) + "0000"; // 省代码
+      this.provinceName = CodeToText[provinceCode]; //省名称
+    },
+    goIndent() {
+       
+        this.$emit('changeTab', this.first);
+      
+    //   this.$router.push({
+    //     path: this.$globalFontUrl.COMPANY_INDENT,
+    //     query: this.res
+    //   });
+    }
+  }
+};
+</script>
+<style scoped>
+.btn-submit-blue{
+   display: inline-block;
+  border: 1px #258FEE solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #258FEE;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  color: #fff;
+  padding: 7px 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline:none;
+  cursor: pointer;
+}
+.box {
+  width: 180px;
+  height: 180px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+.box > img {
+  width: 180px;
+  height: 150px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template>
+  <div class="overflow">
+    <div class="pt50 pb50">
+      <el-steps
+        :active="step"
+        align-center
+      >
+        <el-step title="填写企业信息">
+          <!-- <i slot="icon" class="iconfont icon-tianxieqiyexinxi-yonghuzhongxin-qiyexinxi"></i> -->
+        </el-step>
+        <!-- <el-step title="上传认证资料"> -->
+          <!-- <i slot="icon" class="iconfont icon-shangchuanrenzhengziliao-yonghuzhongxin-qiyexinxi"></i> -->
+        <!-- </el-step> -->
+        <el-step title="等待审核结果">
+          <!-- <i slot="icon" class="iconfont icon-dengdaishenhejieguo-yonghuzhongxin-qiyexinxi"></i> -->
+        </el-step>
+        <el-step title="审核成功">
+          <!-- <i slot="icon" class="iconfont icon-shenhechenggong-yonghuzhongxin-qiyexinxi"></i> -->
+        </el-step>
+      </el-steps>
+    </div>
+    <div
+      v-if="step <= 1"
+      class="text-center w80p box-center lh40 tip1 color-orange"
+    >{{tip}}</div>
+    <div
+      v-else-if="step == 2 && waitting == 1"
+      class="text-center w100p lh60 f24 color-orange pt40 pb40"
+    >
+      您的企业认证正在审核中，请耐心等待...
+    </div>
+    <div
+      v-else-if="step == 2 && shibai == 5"
+      class="text-center w100p pt50"
+    >
+      <p class="f24 lh60">您的企业认证审核未通过，请查看原因并<span class="color-f45f5f">重新提交审核资料</span>。</p>
+      <p class="f14 color-gray-3 fb lh60"><span class="color-f45f5f">审核失败原因：</span>{{reason}}</p>
+    </div>
+    <div
+      v-else-if="step == 3 && success == 1"
+      class="text-center w100p pt30 pb50"
+    >
+      <p class="f24 lh60 color-green"><i slot="icon" class="iconfont f24 fb icon-shenhechenggong-yonghuzhongxin-qiyexinxi"></i>恭喜您企业认证成功</p>
+      <p class="f14 color-gray-9 fb"></p>
+    </div>
+   
+  </div>
+</template>
+<script>
+export default {
+  name: "ComSteps",
+  props: {
+    step: {
+      default: ""
+    },
+    tip: {
+      default: ""
+    },
+    reason:{
+      default: ""
+    },
+    waitting:{
+        default: ""
+    },
+    shibai:{
+        default: ""
+    },
+    success:{
+          default: ""
+    },
+   
+
+  }
+};
+</script>
+<style scoped>
+.tip1 {
+  background: #fffaaf;
+  border: 1px solid #ff9600;
+}
+</style>
